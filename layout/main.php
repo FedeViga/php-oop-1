@@ -12,7 +12,7 @@
                 
                         <img class="mb-2" src="'.$movie->image.'">
                         <h2>'.$movie->title.'</h2>
-                        <h3>'.$movie->director.'</h3>
+                        <h3>'.$movie->director->getDirector().'</h3>
                         <h4>'.$movie->year.'</h4>
                         <h5>'.$movie->length.'</h5>
                         <h5>'.implode(", ", $movie->genres).'</h5>

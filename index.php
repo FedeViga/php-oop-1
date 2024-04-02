@@ -22,7 +22,7 @@ require './db.php';
 
     <?php 
     include './layout/header.php';
-    include './layout/main.php'
+    include './layout/main.php';
     ?>
 
     <!-- bootstrap -->
