@@ -6,6 +6,7 @@ class Movie {
     public $director;
     public $year;
     public $length;
+    public $genres = [];
     
     
     /**
@@ -16,14 +17,15 @@ class Movie {
      * @param  string $_director
      * @param  int $_year
      * @param  string $_length
-     * @return void
+     * @param  array $_genres
      */
-    function __construct($_image, $_title, $_director, $_year, $_length) {
+    function __construct($_image, $_title, $_director, $_year, $_length, $_genres) {
         $this->image = $_image;
         $this->title = $_title;
         $this->director = $_director;
         $this->year = $_year;
         $this->length = $_length;
+        $this->genres = $_genres;
     }
 }
 
@@ -32,21 +34,24 @@ $movie1 = new Movie ("https://c8.alamy.com/comp/2C7WH0B/interstellar-2014-direct
                     "Interstellar", 
                     "Christopher Nolan", 
                     2014, 
-                    "169 min"
+                    "169 min",
+                    ["fantascienza", "avventura", "drammatico"]
 );
 
 $movie2 = new Movie ("https://static.posters.cz/image/750/poster/pulp-fiction-cover-i1288.jpg", 
                     "Pulp Fiction", 
                     "Quentin Tarantino", 
                     1994, 
-                    "154 min"
+                    "154 min",
+                    ["commedia", "gangster"]
 );
 
 $movie3 = new Movie ("https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_.jpg", 
                     "Joker", 
                     "Todd Phillips", 
                     2019, 
-                    "121 min"
+                    "121 min",
+                    ["drammatico", "poliziesco", "thriller", "noir"]
 );
 
 
@@ -94,6 +99,7 @@ $movies = [
                         <h3>'.$movie->director.'</h3>
                         <h4>'.$movie->year.'</h4>
                         <h5>'.$movie->length.'</h5>
+                        <h5>'.implode(", ", $movie->genres).'</h5>
 
                     </div>
                 </div>
